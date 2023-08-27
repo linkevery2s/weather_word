@@ -166,13 +166,15 @@
 
         resultCount.innerHTML = '<b>' + count + '</b> 件見つかりました（' + max + '件中）';
 
+        let list = document.querySelector("#page_list");
+        list.childNodes[0].childNodes[0].style.backgroundColor = "#007bbb";
+        list.childNodes[0].childNodes[0].style.color = "#ffffff";
+
         window.kirikae = (x) =>{
 
           result.innerHTML = "";
 
           result.innerHTML = bunkatu[x-1];
-
-          let list = document.querySelector("#page_list");
 
           for (let i = 0; i < b; i++){
 
@@ -180,7 +182,9 @@
 
               list.childNodes[0].childNodes[i].style.backgroundColor = "#007bbb";
               list.childNodes[0].childNodes[i].style.color = "#ffffff";
+
             }else{
+
               list.childNodes[0].childNodes[i].style.backgroundColor = "#ffffff";
               list.childNodes[0].childNodes[i].style.color = "#007bbb";
 
@@ -196,7 +200,7 @@
 
 
   /* 検索ボタン押下時 */
-      document.getElementById('text').addEventListener('keyup',
+      document.getElementById('text').addEventListener('input',
 
         async () => {
 
@@ -269,6 +273,9 @@
 
             result.innerHTML = bunkatu2[0];
 
+            let list = document.querySelector("#page_list");
+            list.childNodes[0].childNodes[0].style.backgroundColor = "#007bbb";
+            list.childNodes[0].childNodes[0].style.color = "#ffffff";
 
             resultCount.innerHTML = '<b>' + count + '</b> 件見つかりました（' + max + '件中）';
 
@@ -286,7 +293,9 @@
 
                   list.childNodes[0].childNodes[i].style.backgroundColor = "#007bbb";
                   list.childNodes[0].childNodes[i].style.color = "#ffffff";
+
                 }else{
+
                   list.childNodes[0].childNodes[i].style.backgroundColor = "#ffffff";
                   list.childNodes[0].childNodes[i].style.color = "#007bbb";
 
